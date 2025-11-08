@@ -105,18 +105,18 @@
             border-top: 1px solid var(--secondary-color);
         }
 
-        .navigation a {
-            text-decoration: none;
-            color: white;
+        .nav-button {
             background-color: var(--primary-color);
+            color: white;
             padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
             font-weight: bold;
         }
 
-        .navigation a:hover {
-            background-color: var(--heading-color);
+        .nav-button:hover {
+            background-color: #004085;
         }
 
         .navigation .home-button {
@@ -167,14 +167,33 @@
                 text-align: center;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <header>
         <div class="container">
             <h1>Slide 7: Bias Mitigation Strategies - Three-Stage Intervention Framework</h1>
         </div>
     </header>
+
+    <nav class="navigation">
+        <a href="slide06.html" class="nav-button">← Previous (Slide 6)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide08.html" class="nav-button">Next (Slide 8) →</a>
+    </nav>
 
     <div class="container">
         <div class="slide-content">
@@ -224,12 +243,6 @@
                 <h3>Rubric Reference: Bias Mitigation Strategies</h3>
                 <p>This slide directly addresses the **Bias Mitigation Strategies** rubric criterion by detailing the comprehensive three-stage intervention framework (Pre-processing, In-processing, and Post-processing). It provides specific, technical examples for each stage, demonstrating a deep understanding of practical bias reduction techniques in the AI lifecycle. The content is presented clearly and professionally, suitable for a strategic roadmap presentation.</p>
             </div>
-
-            <nav class="navigation">
-                <a href="slide06.html" class="nav-button">← Previous (Slide 6)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide08.html" class="nav-button">Next (Slide 8) →</a>
-            </nav>
         </div>
     </div>
 

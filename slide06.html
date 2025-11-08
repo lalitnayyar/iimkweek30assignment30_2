@@ -155,6 +155,29 @@
             left: 0;
         }
 
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .nav-button {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            background-color: #004085;
+        }
+
         /* Footer */
         footer {
             background-color: var(--color-text);
@@ -194,20 +217,34 @@
                 min-width: 100%;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
 
     <header>
         <div class="container">
             <h1 class="slide-title">Slide 6: Bias Mitigation - Understanding Algorithmic Bias</h1>
-            <nav class="navigation">
-                <a href="slide05.html" class="nav-button">← Previous (Slide 5)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide07.html" class="nav-button">Next (Slide 7) →</a>
-            </nav>
         </div>
     </header>
+
+    <nav class="navigation">
+        <a href="slide05.html" class="nav-button">← Previous (Slide 5)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide07.html" class="nav-button">Next (Slide 7) →</a>
+    </nav>
 
     <main class="container">
         <div class="slide-content">

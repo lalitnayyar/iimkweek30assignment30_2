@@ -177,15 +177,35 @@
                 text-align: center;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Slide 8: Bias Mitigation - Organizational Best Practices</h1>
-            <h2>Successful bias mitigation combines technical interventions with organizational policies and diverse team composition</h2>
-        </header>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
+    <header>
+        <h1>Slide 8: Bias Mitigation - Organizational Best Practices</h1>
+        <h2>Successful bias mitigation combines technical interventions with organizational policies and diverse team composition</h2>
+    </header>
 
+    <!-- Navigation -->
+    <nav class="navigation">
+        <a href="slide07.html" class="nav-button">← Previous (Slide 7)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide09.html" class="nav-button">Next (Slide 9) →</a>
+    </nav>
+
+    <div class="container">
         <div class="slide-content">
             <div class="text-section">
                 <p>Beyond technical algorithms, organizational practices play a crucial role in mitigating bias. <strong>Diverse development teams</strong> bring varied perspectives that help identify potential biases that homogeneous teams might overlook. Research demonstrates that teams with diverse backgrounds across gender, race, age, and professional experience produce more equitable AI systems. <strong>Humans-in-the-loop approaches</strong> maintain human oversight at critical decision points, allowing experts to review AI recommendations before implementation and catch errors that automated systems miss. <strong>Representative data collection</strong> ensures training datasets accurately reflect the populations that AI systems will serve, reducing exclusion bias that occurs when certain groups are underrepresented. <strong>Continuous testing and validation</strong> using fairness metrics identifies bias that emerges during deployment, as AI systems may behave differently in production than in development environments. <strong>Bias impact statements</strong> formalize the assessment process, requiring teams to document potential biases, mitigation strategies, and ongoing monitoring plans before deploying AI systems.</p>
@@ -195,13 +215,6 @@
                 <img src="images/slide08_best_practices.png" alt="Diagram illustrating organizational best practices for bias mitigation, such as diverse teams and human oversight.">
             </div>
         </div>
-
-        <!-- Navigation -->
-        <nav class="navigation">
-            <a href="slide07.html" class="nav-button">← Previous (Slide 7)</a>
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="slide09.html" class="nav-button">Next (Slide 9) →</a>
-        </nav>
 
         <!-- Rubric References and Detailed Explanations -->
         <div class="rubric-explanation">

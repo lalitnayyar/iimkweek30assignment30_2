@@ -165,14 +165,33 @@
                 text-align: center;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <header>
         <div class="container">
             <h1>AI Governance and Ethics: Strategic Roadmap</h1>
         </div>
     </header>
+
+    <nav class="navigation">
+        <a href="slide11.html" class="nav-button">← Previous (Slide 11)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide13.html" class="nav-button">Next (Slide 13) →</a>
+    </nav>
 
     <div class="container">
         <div class="slide-content">
@@ -191,12 +210,6 @@
                 <h3>Rubric Reference and Explanation</h3>
                 <p>This slide directly addresses the **Ethical Compliance Frameworks and Tools** criterion from the assignment rubric. The detailed explanation of the AI Fairness 360 Toolkit, including its specific algorithms and metrics, serves as a concrete example of a tool that can be used to implement the ethical compliance frameworks discussed in the presentation. It moves beyond theoretical discussion to provide a practical, open-source solution for bias mitigation, which is a core component of responsible AI governance. The inclusion of the image and the specific numbers (10 algorithms, 70+ metrics) adds depth and technical rigor to the explanation, demonstrating a thorough understanding of the available tools in the field.</p>
             </div>
-
-            <nav class="navigation">
-                <a href="slide11.html" class="nav-button">← Previous (Slide 11)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide13.html" class="nav-button">Next (Slide 13) →</a>
-            </nav>
         </div>
     </div>
 

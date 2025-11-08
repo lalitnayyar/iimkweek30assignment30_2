@@ -195,9 +195,22 @@
                 text-align: center;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
 
     <div class="slide-container">
         
@@ -205,6 +218,12 @@
             <h1 class="slide-title">Slide 2: Executive Overview</h1>
             <p class="slide-subtitle">The AI Transformation Imperative</p>
         </header>
+
+        <nav class="navigation">
+            <a href="slide01.html" class="nav-button">← Previous (Slide 1)</a>
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="slide03.html" class="nav-button">Next (Slide 3) →</a>
+        </nav>
 
         <main class="slide-main">
             <div class="slide-content-grid">
@@ -233,12 +252,6 @@
                     <li><strong>Self-Contained HTML:</strong> All styling (CSS) is embedded within the <code>&lt;style&gt;</code> tags in the <code>&lt;head&gt;</code>, making the HTML file completely self-contained for easy submission and viewing.</li>
                 </ul>
             </section>
-
-            <nav class="navigation">
-                <a href="slide01.html" class="nav-button">← Previous (Slide 1)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide03.html" class="nav-button">Next (Slide 3) →</a>
-            </nav>
         </main>
 
         <footer class="slide-footer">

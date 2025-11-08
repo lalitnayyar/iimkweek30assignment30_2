@@ -118,27 +118,28 @@
             color: var(--color-primary);
         }
 
-        /* Navigation and Footer will be styled in Phase 4 */
-        nav {
-            background-color: #e9ecef;
-            padding: 10px 0;
-            text-align: center;
-            box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 1px solid #dee2e6;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--color-primary);
-            padding: 8px 15px;
-            margin: 0 10px;
-            border: 1px solid var(--color-primary);
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
+        .nav-button {
             background-color: var(--color-primary);
             color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background-color: #004085;
         }
 
         footer {
@@ -240,9 +241,22 @@
                 width: 80%;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <header>
         <div class="container">
             <h1>

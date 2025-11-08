@@ -114,16 +114,17 @@
             border-top: 1px solid #ccc;
         }
 
-        .navigation a {
-            text-decoration: none;
-            color: white;
+        .nav-button {
             background-color: var(--primary-color);
+            color: white;
             padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
         }
 
-        .navigation a:hover {
+        .nav-button:hover {
             background-color: #004085;
         }
 
@@ -180,14 +181,33 @@
                 margin-bottom: 10px;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <header>
         <div class="container">
             <h1>AI Governance and Ethics: Strategic Roadmap</h1>
         </div>
     </header>
+
+    <nav class="navigation">
+        <a href="slide15.html" class="nav-button">← Previous (Slide 15)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide17.html" class="nav-button">Next (Slide 17) →</a>
+    </nav>
 
     <div class="container">
         <div class="slide-content">
@@ -234,12 +254,6 @@
                 <p><strong>Rubric Criteria Addressed:</strong> Compliance Considerations (Healthcare - HIPAA)</p>
                 <p><strong>Explanation:</strong> This slide directly addresses the compliance considerations for the healthcare sector by focusing on the **Health Insurance Portability and Accountability Act (HIPAA)**. It breaks down the specific requirements of the **Privacy Rule** (minimum necessary, patient rights), the **Security Rule** (administrative, physical, and technical safeguards like encryption and access controls), and **Breach Notification**. Furthermore, it highlights the unique challenges AI systems face, such as the need for **Business Associate Agreements** and the proper **de-identification of training data**, demonstrating a comprehensive understanding of the regulatory landscape for AI in healthcare.</p>
             </div>
-
-            <nav class="navigation">
-                <a href="slide15.html" class="nav-button">← Previous (Slide 15)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide17.html" class="nav-button">Next (Slide 17) →</a>
-            </nav>
         </div>
     </div>
 

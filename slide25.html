@@ -179,15 +179,35 @@
                 text-align: center;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
+
+    <header>
+        <h1>Slide 25: Conclusion - Building AI-Ready Organizational Culture</h1>
+        <h2>Sustainable AI governance requires embedding ethical principles and compliance practices into organizational DNA</h2>
+    </header>
+
+    <nav class="navigation">
+        <a href="slide24.html" class="nav-button">← Previous (Slide 24)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide26.html" class="nav-button">Next (Slide 26) →</a>
+    </nav>
 
     <div class="container">
-        <header>
-            <h1>Slide 25: Conclusion - Building AI-Ready Organizational Culture</h1>
-            <h2>Sustainable AI governance requires embedding ethical principles and compliance practices into organizational DNA</h2>
-        </header>
 
         <div class="content-grid">
             <div class="text-content">
@@ -217,12 +237,6 @@
                 <p style="font-size: 0.8em; color: #6c757d; margin-top: 5px;">Visual: Conceptual image of an AI-Ready Organizational Culture.</p>
             </div>
         </div>
-
-        <nav class="navigation">
-            <a href="slide24.html" class="nav-button">← Previous (Slide 24)</a>
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="slide26.html" class="nav-button">Next (Slide 26) →</a>
-        </nav>
     </div>
 
     <footer>

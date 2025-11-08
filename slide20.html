@@ -191,15 +191,34 @@
                 font-size: 2em;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <header>
         <div class="container">
             <h1>AI Governance and Ethics: Strategic Roadmap</h1>
             <div style="font-size: 1.1em;">Slide 20 / 27</div>
         </div>
     </header>
+
+    <nav class="navigation">
+        <a href="slide19.html" class="nav-button">← Previous (Slide 19)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide21.html" class="nav-button">Next (Slide 21) →</a>
+    </nav>
 
     <div class="container">
         <div class="slide-content">
@@ -214,12 +233,6 @@
                     <img src="images/slide20_kpi.png" alt="Key Performance Indicators for AI Monitoring">
                 </div>
             </div>
-
-            <nav class="navigation">
-                <a href="slide19.html" class="nav-button">← Previous (Slide 19)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide21.html" class="nav-button">Next (Slide 21) →</a>
-            </nav>
 
             <div class="rubric-section">
                 <h4>Rubric References and Detailed Explanation</h4>

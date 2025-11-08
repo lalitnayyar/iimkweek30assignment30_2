@@ -222,13 +222,32 @@
                 margin: 5px 0;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
 
     <div class="header">
         <h1>AI Governance and Ethics: Strategic Roadmap (Slide 1 of 27)</h1>
     </div>
+
+    <nav class="navigation">
+        <a href="index.html" class="nav-button">← Home</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide02.html" class="nav-button">Next (Slide 2) →</a>
+    </nav>
 
     <div class="slide-container">
         <div class="title-section">
@@ -264,12 +283,6 @@
             </ul>
         </div>
     </div>
-
-    <nav class="navigation">
-        <a href="index.html" class="nav-button">← Home</a>
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="slide02.html" class="nav-button">Next (Slide 2) →</a>
-    </nav>
 
     <div class="footer">
         <span>Lalit Nayyar</span> | 

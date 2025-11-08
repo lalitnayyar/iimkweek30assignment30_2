@@ -124,29 +124,18 @@
             border-top: 1px solid #eee;
         }
 
-        .navigation a {
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-weight: bold;
-            color: white;
-        }
-
-        .navigation .prev-btn {
-            background-color: #6c757d; /* Gray */
-        }
-
-        .navigation .next-btn {
-            background-color: var(--secondary-color);
-        }
-
-        .navigation .home-btn {
+        .nav-button {
             background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
         }
 
-        .navigation a:hover {
-            opacity: 0.9;
+        .nav-button:hover {
+            background-color: #004085;
         }
 
         footer {
@@ -177,14 +166,33 @@
                 font-size: 2.2em;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
 
     <header>
         <h1>Integrated AI Governance Framework</h1>
         <div class="slide-info">Slide 23 of 27 | Lalit Nayyar | lalitnayyar@gmail.com</div>
     </header>
+
+    <nav class="navigation">
+        <a href="slide22.html" class="nav-button">← Previous (Slide 22)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide24.html" class="nav-button">Next (Slide 24) →</a>
+    </nav>
 
     <div class="container">
         <h2>Strategic Recommendations - Integrated AI Governance Framework</h2>
@@ -223,12 +231,6 @@
                 <p>The slide serves as a strategic recommendation, synthesizing the concepts from previous slides (bias, explainability, compliance, monitoring) into a single, actionable framework. By explicitly naming the five layers, it provides a clear blueprint for the multinational corporation to follow, demonstrating a strategic and managerial perspective on AI adoption.</p>
             </div>
         </div>
-
-        <nav class="navigation">
-            <a href="slide22.html" class="nav-button">← Previous (Slide 22)</a>
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="slide24.html" class="nav-button">Next (Slide 24) →</a>
-        </nav>
     </div>
 
     <footer>

@@ -169,13 +169,32 @@
                 text-align: center;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <div class="slide-container">
         <header>
             <h1>Slide 27: Disclaimer and Footer</h1>
         </header>
+
+        <nav class="navigation">
+            <a href="slide26.html" class="nav-button">← Previous (Slide 26)</a>
+            <a href="index.html" class="nav-button">Home</a>
+            <button class="nav-button" disabled>Next (End) →</button>
+        </nav>
 
         <div class="content-area">
             <div class="text-content">
@@ -203,12 +222,6 @@
                 <img src="images/slide27_disclaimer.png" alt="Disclaimer Image" />
             </div>
         </div>
-
-        <nav class="navigation">
-            <a href="slide26.html" class="nav-button">← Previous (Slide 26)</a>
-            <a href="index.html" class="nav-button">Home</a>
-            <button class="nav-button" disabled>Next (End) →</button>
-        </nav>
     </div>
 
     <footer>

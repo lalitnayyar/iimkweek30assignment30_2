@@ -180,12 +180,31 @@
             margin-bottom: 5px;
             color: var(--primary-color);
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <header>
         <h1>AI Governance and Ethics: Strategic Roadmap</h1>
     </header>
+
+    <nav class="navigation">
+        <a href="slide17.html" class="nav-button">← Previous (Slide 17)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide19.html" class="nav-button">Next (Slide 19) →</a>
+    </nav>
 
     <div class="container">
         <div class="slide-content">
@@ -238,12 +257,6 @@
                     <p>A fixed footer is included at the bottom of the page containing the required text: "Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers."</p>
                 </div>
             </div>
-
-            <nav class="navigation">
-                <a href="slide17.html" class="nav-button">← Previous (Slide 17)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide19.html" class="nav-button">Next (Slide 19) →</a>
-            </nav>
         </div>
     </div>
 

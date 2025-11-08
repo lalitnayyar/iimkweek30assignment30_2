@@ -172,14 +172,33 @@
                 text-align: center;
             }
         }
+        /* Copy and Print Protection */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
     <header>
         <div class="container">
             <h1>AI Governance and Ethics: Strategic Roadmap</h1>
         </div>
     </header>
+
+    <nav class="navigation">
+        <a href="slide04.html" class="nav-button">← Previous (Slide 4)</a>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="slide06.html" class="nav-button">Next (Slide 6) →</a>
+    </nav>
 
     <div class="container">
         <div class="slide-content">
@@ -199,12 +218,6 @@
                 <li><strong>2. Transparency and Explainability in AI:</strong> This criterion is addressed by highlighting the role of transparency in building stakeholder trust and enabling accountability, which is a core theme of the following slides on Explainable AI (XAI).</li>
                 <li><strong>3. Ethical Compliance Frameworks and Tools:</strong> The overview mentions that compliance frameworks provide structured approaches to implementing ethical standards, which will be elaborated upon with specific examples like GDPR and HIPAA in later slides. This establishes the organizational and regulatory context for the technical solutions.</li>
             </ul>
-
-            <nav class="navigation">
-                <a href="slide04.html" class="nav-button">← Previous (Slide 4)</a>
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="slide06.html" class="nav-button">Next (Slide 6) →</a>
-            </nav>
         </div>
     </div>
 
