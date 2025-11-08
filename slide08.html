@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 8 - Bias Mitigation Best Practices</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #ffffff;
+            line-height: 1.6;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 15px 0;
+            border-bottom: 2px solid #1e40af;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-btn {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #2563eb;
+        }
+        
+        .nav-btn:disabled {
+            background: #334155;
+            cursor: not-allowed;
+        }
+        
+        .slide-info {
+            color: #94a3b8;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .slide-content {
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .slide-image {
+            width: 100%;
+            display: block;
+            background: white;
+            position: relative;
+        }
+        
+        .slide-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .watermark {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 0.85em;
+        }
+        
+        .slide-text {
+            padding: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #60a5fa;
+        }
+        
+        .content {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        
+        .nav-button {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .nav-button:hover {
+            background: #2563eb;
+        }
+        
+        .nav-button:disabled {
+            background: #334155;
+            cursor: not-allowed;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            background: #1e293b;
+            border-radius: 10px;
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+        
+        .watermark-fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            z-index: 50;
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+    </script>
+</head>
+<body>
+    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-btn">🏠 Home</a>
+            <div class="slide-info">Slide 8 of 27</div>
+            <div>
+                <a href="slide07.html" class="nav-btn">← Previous</a>
+                <a href="slide09.html" class="nav-btn">Next →</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="slide-content">
+            <div class="slide-image">
+                <img src="images/slide08_best_practices.png" alt="Slide 8">
+                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
+            </div>
+            
+            <div class="slide-text">
+                <h1>Bias Mitigation Best Practices</h1>
+                <div class="content">Successful bias mitigation combines technical interventions with organizational policies including diverse development teams, humans-in-the-loop approaches, representative data collection, continuous testing, and bias impact statements.</div>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <a href="slide07.html" class="nav-button">← Previous</a>
+            <span style="color: #94a3b8;">8 / 27</span>
+            <a href="slide09.html" class="nav-button">Next →</a>
+        </div>
+        
+        <footer>
+            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
+            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
+        </footer>
+    </div>
+</body>
+</html>
