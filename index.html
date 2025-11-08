@@ -9,6 +9,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         
         body {
@@ -133,6 +137,12 @@
             
             .slides-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+        
+        @media print {
+            body {
+                display: none !important;
             }
         }
     </style>
@@ -377,5 +387,70 @@
             <p style="margin-top: 20px; font-size: 0.9em;">© 2025 All Rights Reserved</p>
         </footer>
     </div>
+    
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Disable copy, cut, and paste
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Disable keyboard shortcuts for copy, print, and save
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+C, Ctrl+X, Ctrl+V, Ctrl+P, Ctrl+S, Ctrl+U
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'x' || e.key === 'v' || 
+                              e.key === 'p' || e.key === 's' || e.key === 'u' ||
+                              e.key === 'C' || e.key === 'X' || e.key === 'V' || 
+                              e.key === 'P' || e.key === 'S' || e.key === 'U')) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (Developer tools)
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C' ||
+                                             e.key === 'i' || e.key === 'j' || e.key === 'c'))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Disable text selection via mouse drag
+        document.onselectstart = function() {
+            return false;
+        };
+        
+        // Disable drag and drop
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Additional print protection
+        window.addEventListener('beforeprint', function(e) {
+            e.preventDefault();
+            document.body.style.display = 'none';
+        });
+        
+        window.addEventListener('afterprint', function(e) {
+            document.body.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
