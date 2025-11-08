@@ -3,214 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 23 - Integrated AI Governance Framework</title>
+    <title>Slide 23: Integrated AI Governance Framework</title>
     <style>
-        * {
+        :root {
+            --primary-color: #0056b3; /* Dark Blue */
+            --secondary-color: #28a745; /* Green */
+            --text-color: #333;
+            --background-color: #f8f9fa; /* Light Gray */
+            --card-background: #ffffff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
             line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .nav-btn {
-            background: #1e40af;
+
+        header {
+            background-color: var(--primary-color);
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
+            padding: 15px 5%;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
-        .nav-btn:hover {
-            background: #2563eb;
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
         }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        .slide-info {
-            color: #94a3b8;
-        }
-        
+
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            flex: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
         }
-        
-        .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.5em;
         }
-        
-        .slide-image {
-            width: 100%;
-            display: block;
-            background: white;
-            position: relative;
-        }
-        
-        .slide-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
-        }
-        
-        .slide-text {
-            padding: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #60a5fa;
-        }
-        
-        .content {
+
+        h3 {
+            color: var(--secondary-color);
             font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
+            margin-top: 20px;
         }
-        
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .text-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .text-content strong {
+            color: var(--primary-color);
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .rubric-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 5px;
+            background-color: #f4f4f4;
+        }
+
+        .rubric-section h3 {
+            color: var(--primary-color);
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 5px;
+        }
+
+        .rubric-item {
+            margin-bottom: 15px;
+        }
+
+        .rubric-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
         }
-        
-        .nav-button {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
+
+        .navigation a {
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-button:hover {
-            background: #2563eb;
-        }
-        
-        .nav-button:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
             padding: 10px 20px;
             border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navigation .prev-btn {
+            background-color: #6c757d; /* Gray */
+        }
+
+        .navigation .next-btn {
+            background-color: var(--secondary-color);
+        }
+
+        .navigation .home-btn {
+            background-color: var(--primary-color);
+        }
+
+        .navigation a:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 5%;
+            text-align: center;
             font-size: 0.9em;
-            z-index: 50;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .slide-info {
+            font-size: 0.8em;
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 2fr 1fr; /* Text on left, Image on right */
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 23 of 27</div>
-            <div>
-                <a href="slide22.html" class="nav-btn">← Previous</a>
-                <a href="slide24.html" class="nav-btn">Next →</a>
-            </div>
-        </div>
-    </nav>
-    
+
+    <header>
+        <h1>Integrated AI Governance Framework</h1>
+        <div class="slide-info">Slide 23 of 27 | Lalit Nayyar | lalitnayyar@gmail.com</div>
+    </header>
+
     <div class="container">
-        <div class="slide-content">
-            <div class="slide-image">
-                <img src="images/slide23_framework.png" alt="Slide 23">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
+        <h2>Strategic Recommendations - Integrated AI Governance Framework</h2>
+        <h3>Successful AI governance requires coordinated strategies spanning technology, policy, organization, and culture</h3>
+
+        <div class="content-grid">
+            <div class="text-content">
+                <p>Organizations should implement an integrated governance framework addressing multiple dimensions simultaneously. This framework recognizes that technology alone cannot ensure responsible AI—organizational commitment, clear policies, and cultural values are equally essential.</p>
+
+                <p><strong>Technology layer</strong> includes bias mitigation algorithms, explainability tools, monitoring systems, and security controls embedded throughout AI systems.</p>
+
+                <p><strong>Policy layer</strong> establishes clear standards for ethical AI use, data governance, compliance requirements, and accountability structures, documented in accessible formats that guide decision-making.</p>
+
+                <p><strong>Organizational layer</strong> creates cross-functional teams combining data scientists, domain experts, legal counsel, compliance officers, and business leaders who collaborate throughout the AI lifecycle.</p>
+
+                <p><strong>Process layer</strong> implements structured workflows for AI development including ethics reviews, bias assessments, validation testing, deployment approvals, and ongoing monitoring.</p>
+
+                <p><strong>Culture layer</strong> fosters organizational values that prioritize responsible AI, providing training on ethical considerations, encouraging transparency and open discussion of concerns, and rewarding behaviors that advance fairness and compliance.</p>
+
+                <p><strong>Governance bodies</strong> such as AI ethics committees or responsible AI boards provide oversight, resolve conflicts, and ensure alignment with organizational values. This integrated approach recognizes that technology alone cannot ensure responsible AI—organizational commitment, clear policies, and cultural values are equally essential.</p>
             </div>
-            
-            <div class="slide-text">
-                <h1>Integrated AI Governance Framework</h1>
-                <div class="content">Successful governance requires coordinated strategies spanning technology, policy, organization, process, and culture layers working in concert to create effective AI governance.</div>
+
+            <div class="image-container">
+                <img src="/home/ubuntu/slide_images/slide_23.png" alt="Diagram illustrating an integrated AI Governance Framework with layers for Technology, Policy, Organization, Process, and Culture.">
             </div>
         </div>
-        
+
+        <div class="rubric-section">
+            <h3>Rubric References and Detailed Explanations</h3>
+            <div class="rubric-item">
+                <strong>Rubric Criterion: Comprehensive AI Governance Framework Design</strong>
+                <p>This slide directly addresses the need for a comprehensive governance framework by detailing a multi-layered structure. It moves beyond a purely technical solution (Technology layer) to include critical non-technical components: <strong>Policy</strong> (standards, accountability), <strong>Organizational</strong> (cross-functional teams), <strong>Process</strong> (structured workflows), and <strong>Culture</strong> (values, training). This holistic view ensures that the framework is embedded within the organization's DNA, providing a robust and sustainable approach to responsible AI, which is a key requirement for a high-scoring assignment.</p>
+            </div>
+            <div class="rubric-item">
+                <strong>Rubric Criterion: Strategic Recommendations and Implementation</strong>
+                <p>The slide serves as a strategic recommendation, synthesizing the concepts from previous slides (bias, explainability, compliance, monitoring) into a single, actionable framework. By explicitly naming the five layers, it provides a clear blueprint for the multinational corporation to follow, demonstrating a strategic and managerial perspective on AI adoption.</p>
+            </div>
+        </div>
+
         <div class="navigation">
-            <a href="slide22.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">23 / 27</span>
-            <a href="slide24.html" class="nav-button">Next →</a>
+            <a href="slide_22.html" class="prev-btn">&larr; Previous (Slide 22)</a>
+            <a href="index.html" class="home-btn">Home</a>
+            <a href="slide_24.html" class="next-btn">Next (Slide 24) &rarr;</a>
         </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <footer>
+        <p>Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</p>
+    </footer>
+
 </body>
 </html>

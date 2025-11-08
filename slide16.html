@@ -3,214 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 16 - HIPAA Compliance for AI Systems</title>
+    <title>Slide 16: HIPAA Compliance for AI Systems</title>
     <style>
-        * {
+        :root {
+            --primary-color: #0056b3; /* Dark Blue */
+            --secondary-color: #e9ecef; /* Light Gray */
+            --text-color: #343a40; /* Dark Gray */
+            --heading-color: #004085; /* Darker Blue */
+            --accent-color: #28a745; /* Green for success/emphasis */
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+            background-color: #f8f9fa;
+            color: var(--text-color);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .nav-btn {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background: #2563eb;
-        }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        .slide-info {
-            color: #94a3b8;
-        }
-        
+
         .container {
-            max-width: 1400px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
+            flex-grow: 1;
         }
-        
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
         .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
         }
-        
-        .slide-image {
-            width: 100%;
-            display: block;
-            background: white;
-            position: relative;
+
+        h2 {
+            color: var(--heading-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 2em;
         }
-        
-        .slide-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+            font-size: 1.5em;
         }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
         }
-        
-        .slide-text {
-            padding: 40px;
+
+        strong {
+            color: var(--heading-color);
         }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #60a5fa;
+
+        .key-points {
+            list-style-type: none;
+            padding-left: 0;
         }
-        
-        .content {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
+
+        .key-points li {
+            background: var(--secondary-color);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 4px;
         }
-        
+
+        .rubric-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff3cd; /* Light yellow background for attention */
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            color: #856404;
+        }
+
+        .rubric-section h3 {
+            color: #856404;
+            border-bottom: 2px solid #ffeeba;
+            padding-bottom: 5px;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            margin-top: 30px;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
         }
-        
-        .nav-button {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
+
+        .navigation a {
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-button:hover {
-            background: #2563eb;
-        }
-        
-        .nav-button:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            background-color: var(--primary-color);
             padding: 10px 20px;
             border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #004085;
+        }
+
+        .navigation .home-btn {
+            background-color: var(--accent-color);
+        }
+
+        .navigation .home-btn:hover {
+            background-color: #1e7e34;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
             font-size: 0.9em;
-            z-index: 50;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        .slide-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .slide-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.7em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            .slide-content {
+                padding: 20px;
+            }
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navigation a {
+                width: 80%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 16 of 27</div>
-            <div>
-                <a href="slide15.html" class="nav-btn">← Previous</a>
-                <a href="slide17.html" class="nav-btn">Next →</a>
-            </div>
+    <header>
+        <div class="container">
+            <h1>AI Governance and Ethics: Strategic Roadmap</h1>
         </div>
-    </nav>
-    
+    </header>
+
     <div class="container">
         <div class="slide-content">
-            <div class="slide-image">
-                <img src="images/slide16_hipaa.png" alt="Slide 16">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
-            </div>
+            <h2>Slide 16: HIPAA Compliance for AI Systems</h2>
             
-            <div class="slide-text">
-                <h1>HIPAA Compliance for AI Systems</h1>
-                <div class="content">HIPAA compliance requires comprehensive safeguards including privacy by design, robust security safeguards, minimum necessary principle, business associate agreements, and ongoing risk assessment.</div>
+            <h3>AI systems in healthcare must comply with the stringent privacy and security requirements of the Health Insurance Portability and Accountability Act (HIPAA)</h3>
+
+            <div class="slide-image">
+                <!-- Image for Slide 16 - Assuming a file named slide16.png or similar exists in the image directory -->
+                <img src="../slide_images/slide16.png" alt="Diagram illustrating HIPAA compliance requirements for AI systems, showing Privacy Rule, Security Rule, and Breach Notification." onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400?text=Placeholder+for+Slide+16+Image';" />
+                <p style="font-style: italic; font-size: 0.9em; color: #6c757d;">(Image placeholder: Replace with actual slide16.png from /home/ubuntu/slide_images/)</p>
+            </div>
+
+            <p>The Health Insurance Portability and Accountability Act (HIPAA) establishes stringent requirements for protecting Protected Health Information (PHI) that AI systems must satisfy. AI systems operating in the healthcare sector, whether for diagnosis, treatment planning, or administrative tasks, must be designed and deployed with **full adherence to HIPAA's core rules** to avoid severe legal and financial penalties.</p>
+
+            <h3>Key Compliance Requirements for AI Systems</h3>
+            <ul class="key-points">
+                <li>
+                    <strong>Privacy Rule Compliance:</strong> This rule governs the use and disclosure of PHI. AI systems processing PHI must obtain appropriate patient authorizations. They must also implement the **"minimum necessary" standard**, meaning the AI should only access, use, or disclose the minimum amount of PHI required to achieve its specific purpose. Furthermore, the system must support a patient's right to access their information and receive an accounting of disclosures.
+                </li>
+                <li>
+                    <strong>Security Rule Requirements:</strong> This rule mandates safeguards to ensure the confidentiality, integrity, and availability of electronic PHI (ePHI). This includes:
+                    <ul>
+                        <li><strong>Administrative Safeguards:</strong> Implementing risk assessments, developing security management processes, and providing workforce training on security policies.</li>
+                        <li><strong>Physical Safeguards:</strong> Protecting physical access to electronic information systems and the facilities in which they are housed.</li>
+                        <li><strong>Technical Safeguards:</strong> Employing mechanisms like **encryption** for data at rest and in transit, **access controls** to limit who can interact with the AI system and its data, and **audit logs** to record all activity.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Breach Notification Obligations:</strong> Organizations must have protocols to detect, report, and remediate unauthorized PHI disclosures (breaches). AI systems must be auditable to quickly identify the source and scope of any potential breach involving ePHI.
+                </li>
+            </ul>
+
+            <h3>AI-Specific Compliance Challenges</h3>
+            <p>The integration of AI introduces unique challenges to HIPAA compliance:</p>
+            <ul class="key-points">
+                <li><strong>Business Associate Agreements (BAAs):</strong> Determining if an AI vendor qualifies as a Business Associate (BA) and ensuring a BAA is in place that contractually obligates the vendor to comply with HIPAA.</li>
+                <li><strong>Training Data Use:</strong> Ensuring that the AI training process does not involve impermissible uses or disclosures of PHI. This often necessitates the use of robust **de-identification or anonymization techniques** that satisfy HIPAA standards.</li>
+                <li><strong>Audit Trails and Accountability:</strong> Maintaining comprehensive audit trails that track the AI system's access to and use of PHI, which is crucial for demonstrating compliance and investigating incidents.</li>
+            </ul>
+            <p>Organizations must adopt layered security strategies, engage compliance stakeholders early in AI development, and thoroughly vet AI technologies before deployment to ensure continuous HIPAA adherence.</p>
+
+            <div class="rubric-section">
+                <h3>Rubric Reference and Detailed Explanation</h3>
+                <p><strong>Rubric Criteria Addressed:</strong> Compliance Considerations (Healthcare - HIPAA)</p>
+                <p><strong>Explanation:</strong> This slide directly addresses the compliance considerations for the healthcare sector by focusing on the **Health Insurance Portability and Accountability Act (HIPAA)**. It breaks down the specific requirements of the **Privacy Rule** (minimum necessary, patient rights), the **Security Rule** (administrative, physical, and technical safeguards like encryption and access controls), and **Breach Notification**. Furthermore, it highlights the unique challenges AI systems face, such as the need for **Business Associate Agreements** and the proper **de-identification of training data**, demonstrating a comprehensive understanding of the regulatory landscape for AI in healthcare.</p>
+            </div>
+
+            <div class="navigation">
+                <a href="slide15_logistics_compliance.html">&larr; Previous (Slide 15)</a>
+                <a href="../index.html" class="home-btn">Home (Index)</a>
+                <a href="slide17_finance_compliance.html">Next (Slide 17) &rarr;</a>
             </div>
         </div>
-        
-        <div class="navigation">
-            <a href="slide15.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">16 / 27</span>
-            <a href="slide17.html" class="nav-button">Next →</a>
-        </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <footer>
+        Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers | Slide 16/27
+    </footer>
 </body>
 </html>

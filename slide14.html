@@ -3,214 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 14 - Compliance in Regulated Industries</title>
+    <title>Slide 14: Compliance in Regulated Industries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
+        :root {
+            --primary-color: #0056b3; /* Dark Blue */
+            --secondary-color: #28a745; /* Green */
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .nav-btn {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background: #2563eb;
-        }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        .slide-info {
-            color: #94a3b8;
-        }
-        
+
         .container {
-            max-width: 1400px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 0;
+            flex-grow: 1;
         }
-        
-        .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
-        .slide-image {
-            width: 100%;
-            display: block;
-            background: white;
-            position: relative;
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8em;
+            text-align: center;
         }
-        
-        .slide-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
-        }
-        
-        .slide-text {
-            padding: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
+
+        .slide-header {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
             margin-bottom: 20px;
-            color: #60a5fa;
         }
-        
-        .content {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
+
+        .slide-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 5px;
         }
-        
+
+        .slide-header p {
+            font-style: italic;
+            color: #6c757d;
+            font-size: 1.1em;
+        }
+
+        .content-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .main-content {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .rubric-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rubric-list li {
+            background-color: #e9f7ef; /* Light green background */
+            margin-bottom: 10px;
+            padding: 10px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .image-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-block {
+            background-color: var(--card-background);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .text-block h4 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            margin-top: 30px;
+            padding: 15px 0;
+            border-top: 1px solid var(--border-color);
         }
-        
+
         .nav-button {
-            background: #1e40af;
+            background-color: var(--primary-color);
             color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
+            padding: 10px 20px;
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-        
+
         .nav-button:hover {
-            background: #2563eb;
+            background-color: #004085;
         }
-        
-        .nav-button:disabled {
-            background: #334155;
+
+        .nav-button.disabled {
+            background-color: #ccc;
             cursor: not-allowed;
         }
-        
+
         footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
             text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
-            border-radius: 5px;
             font-size: 0.9em;
-            z-index: 50;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .slide-info {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                order: -1; /* Move sidebar above main content on small screens */
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .slide-header h2 {
+                font-size: 1.8em;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 14 of 27</div>
-            <div>
-                <a href="slide13.html" class="nav-btn">← Previous</a>
-                <a href="slide15.html" class="nav-btn">Next →</a>
+    <header>
+        <div class="container">
+            <h1>AI Governance and Ethics: Strategic Roadmap for Multinational Corporations</h1>
+            <div class="slide-info">
+                Slide 14 / 27
             </div>
         </div>
-    </nav>
-    
+    </header>
+
     <div class="container">
-        <div class="slide-content">
-            <div class="slide-image">
-                <img src="images/slide14_regulated_industries.png" alt="Slide 14">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
+        <div class="slide-header">
+            <h2>Compliance in Regulated Industries</h2>
+            <p>Finance and healthcare sectors face unique compliance challenges requiring specialized AI governance approaches</p>
+        </div>
+
+        <div class="content-layout">
+            <div class="main-content">
+                <div class="image-section">
+                    <!-- Placeholder for the slide image -->
+                    <img src="/home/ubuntu/slide_images/slide14.png" alt="Compliance in Regulated Industries Image" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400?text=Image+for+Slide+14+Not+Found';" />
+                </div>
+
+                <div class="text-block">
+                    <p>Regulated industries operate under heightened scrutiny where AI failures can result in significant harm to individuals and substantial penalties for organizations. The **finance sector's** AI systems influence credit decisions, investment recommendations, fraud detection, and risk assessment—areas governed by anti-discrimination laws, consumer protection regulations, and financial stability requirements.</p>
+                    <p>The **healthcare sector's** AI affects patient diagnosis, treatment recommendations, medical device functionality, and health information management—domains regulated by FDA medical device guidelines, HIPAA privacy requirements, and patient safety standards.</p>
+                    <p>These sectors share common challenges: ensuring data privacy and security, maintaining transparency in high-stakes decisions, demonstrating compliance with sector-specific standards, and implementing continuous monitoring to detect and correct issues. However, they also face unique requirements that demand specialized governance approaches. The following slides examine these sector-specific considerations and establish comprehensive monitoring strategies.</p>
+                </div>
             </div>
-            
-            <div class="slide-text">
-                <h1>Compliance in Regulated Industries</h1>
-                <div class="content">Finance and healthcare sectors face unique compliance challenges requiring specialized AI governance. Financial services must address anti-discrimination laws, consumer protection standards, model risk management, and explainability requirements.</div>
+
+            <div class="sidebar">
+                <h3>Rubric Criteria Addressed</h3>
+                <ul class="rubric-list">
+                    <li>4. Industry-Specific Compliance Considerations</li>
+                    <li>5. Monitoring and Evaluation of AI Compliance</li>
+                </ul>
+
+                <h3>Detailed Explanation</h3>
+                <p style="font-size: 0.9em;">
+                    This slide introduces the second major task of the assignment, focusing on compliance in highly regulated environments. It establishes the critical nature of AI governance in finance and healthcare, where regulatory non-compliance carries severe consequences. The content explicitly addresses Rubric Criteria 4 and 5 by framing the discussion around **Industry-Specific Compliance Considerations** (Finance and Healthcare) and the need for **Monitoring and Evaluation of AI Compliance**. It sets the stage for the subsequent slides (15-18) which will delve into the specific regulations (FDA, HIPAA, ECOA, etc.) and the final section (19-22) on continuous monitoring. The use of bold text highlights the two key sectors and their respective areas of regulation, ensuring the slide's focus is clear and directly tied to the assignment's requirements.
+                </p>
             </div>
         </div>
-        
+
         <div class="navigation">
-            <a href="slide13.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">14 / 27</span>
-            <a href="slide15.html" class="nav-button">Next →</a>
+            <a href="slide13.html" class="nav-button">← Previous (Slide 13)</a>
+            <a href="index.html" class="nav-button">Home (Title Slide)</a>
+            <a href="slide15.html" class="nav-button">Next (Slide 15) →</a>
         </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>Lalit Nayyar | lalitnayyar@gmail.com</p>
+            <p>Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -3,214 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 11 - GDPR Requirements for AI</title>
+    <title>Slide 11: GDPR Requirements for AI</title>
     <style>
-        * {
+        :root {
+            --primary-color: #0056b3; /* Dark Blue */
+            --secondary-color: #e9ecef; /* Light Gray */
+            --text-color: #343a40; /* Dark Gray */
+            --heading-color: #004085; /* Darker Blue */
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+            background-color: #f8f9fa;
+            color: var(--text-color);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .nav-btn {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background: #2563eb;
-        }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        .slide-info {
-            color: #94a3b8;
-        }
-        
+
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
+            flex-grow: 1;
         }
-        
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
         .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
         }
-        
-        .slide-image {
-            width: 100%;
-            display: block;
-            background: white;
-            position: relative;
+
+        .slide-content h2 {
+            color: var(--heading-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.5em;
         }
-        
-        .slide-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
-        }
-        
-        .slide-text {
-            padding: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #60a5fa;
-        }
-        
-        .content {
+
+        .slide-content h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
             font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
         }
-        
+
+        .content-section {
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content-section strong {
+            color: var(--heading-color);
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            margin-top: 30px;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
         }
-        
-        .nav-button {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
+
+        .navigation a {
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-button:hover {
-            background: #2563eb;
-        }
-        
-        .nav-button:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
+            color: white;
+            background-color: var(--primary-color);
+            padding: 10px 15px;
             border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #004085;
+        }
+
+        .footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
             font-size: 0.9em;
-            z-index: 50;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .rubric-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .rubric-section h3 {
+            color: var(--heading-color);
+            margin-top: 0;
+        }
+
+        .rubric-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .rubric-section li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .rubric-section li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .slide-content {
+                padding: 20px;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .navigation a {
+                margin-bottom: 10px;
+                text-align: center;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 11 of 27</div>
-            <div>
-                <a href="slide10.html" class="nav-btn">← Previous</a>
-                <a href="slide12.html" class="nav-btn">Next →</a>
-            </div>
+    <header>
+        <div class="container">
+            <h1>Slide 11: Ethical Compliance Frameworks - GDPR Requirements for AI</h1>
         </div>
-    </nav>
-    
+    </header>
+
     <div class="container">
         <div class="slide-content">
-            <div class="slide-image">
-                <img src="images/slide11_gdpr.png" alt="Slide 11">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
+            <h2>GDPR establishes comprehensive data protection requirements that fundamentally shape AI development and deployment in Europe</h2>
+
+            <div class="image-container">
+                <img src="/home/ubuntu/slide_images/slide_11.png" alt="Diagram illustrating GDPR requirements for AI, such as Lawful Basis, Data Minimization, Security, and Individual Rights.">
             </div>
-            
-            <div class="slide-text">
-                <h1>GDPR Requirements for AI</h1>
-                <div class="content">GDPR establishes comprehensive data protection requirements that fundamentally shape AI development and deployment, including rights to explanation, data minimization, purpose limitation, and privacy by design.</div>
+
+            <div class="content-section">
+                <p>The General Data Protection Regulation (GDPR), enacted by the European Union in 2008, creates binding requirements for AI systems processing personal data of EU citizens. These requirements are foundational for any multinational corporation operating in or dealing with data from the EU.</p>
+                
+                <h3>Key GDPR Requirements for AI Systems:</h3>
+                <p>
+                    <strong>Lawful basis for processing</strong> demands explicit consent that is willingly provided, specific, informed, and unequivocal, or legitimate interest that balances organizational needs against individual rights. AI systems must be able to demonstrate a clear legal ground for every data processing activity.
+                </p>
+                <p>
+                    <strong>Data minimization and purpose limitation</strong> require using only the minimum necessary data for specified purposes, prohibiting repurposing without additional consent. This principle directly impacts AI training data, mandating that models are trained on the least amount of personal data required to achieve the stated objective.
+                </p>
+                <p>
+                    <strong>Anonymization and pseudonymization</strong> protect privacy while enabling AI to derive insights from large datasets—anonymization permanently prevents identification, while pseudonymization replaces identifiers with pseudonyms. These techniques are crucial for developing and testing AI models with sensitive data in a compliant manner.
+                </p>
+                <p>
+                    <strong>Security and accountability</strong> mandate integrated security practices to prevent breaches, comprehensive records of data processing activities, Data Protection Impact Assessments (DPIAs) for high-risk processing, and data protection by design and by default. DPIAs are particularly relevant for AI, as they force a systematic assessment of privacy risks before deployment.
+                </p>
+                <p>
+                    <strong>Individual rights</strong> include access to personal data, portability to other services, explanation of automated decisions, and the right to be forgotten through complete data erasure. The "right to explanation" for automated decisions (Article 22) is a cornerstone of GDPR's impact on AI, requiring transparency in algorithmic decision-making.
+                </p>
+            </div>
+
+            <div class="rubric-section">
+                <h3>Rubric References and Explanation</h3>
+                <p>This slide addresses the **Ethical Compliance Frameworks** criteria by detailing the specific, legally binding requirements of the GDPR, which is a primary compliance framework for multinational corporations operating in the EU. The detailed explanation of concepts like "Lawful basis for processing," "Data minimization," and "Right to explanation" demonstrates a comprehensive understanding of how these regulations fundamentally shape AI development and deployment strategies, moving beyond general ethical principles to concrete legal obligations.</p>
+            </div>
+
+            <div class="navigation">
+                <a href="slide_10.html">&larr; Previous: Transparency & Explainability</a>
+                <a href="index.html">Home</a>
+                <a href="slide_12.html">Next: AI Fairness 360 Toolkit &rarr;</a>
             </div>
         </div>
-        
-        <div class="navigation">
-            <a href="slide10.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">11 / 27</span>
-            <a href="slide12.html" class="nav-button">Next →</a>
-        </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <footer class="footer">
+        <p>Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</p>
+    </footer>
 </body>
 </html>

@@ -3,214 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 25 - Building AI-Ready Culture</title>
+    <title>Slide 25: Building AI-Ready Culture</title>
     <style>
-        * {
+        :root {
+            --color-primary: #0056b3; /* Dark Blue */
+            --color-secondary: #28a745; /* Green */
+            --color-text: #333;
+            --color-background: #f8f9fa; /* Light Gray */
+            --color-card-bg: #ffffff;
+            --color-footer-bg: #e9ecef;
+            --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family-main);
+            color: var(--color-text);
+            background-color: var(--color-background);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
             line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .nav-btn {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background: #2563eb;
-        }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        .slide-info {
-            color: #94a3b8;
-        }
-        
+
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            flex: 1;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--color-card-bg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        
-        .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+        /* Header and Title */
+        header {
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
-        
+
+        h1 {
+            color: var(--color-primary);
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+
+        h2 {
+            color: var(--color-secondary);
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+        /* Content Layout */
+        .content-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .text-content {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .image-container {
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+            text-align: center;
+        }
+
         .slide-image {
             width: 100%;
-            display: block;
-            background: white;
-            position: relative;
-        }
-        
-        .slide-image img {
-            width: 100%;
             height: auto;
-            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
+
+        /* Rubric Section */
+        .rubric-reference {
+            margin-top: 30px;
+            padding: 15px;
+            border-left: 5px solid var(--color-secondary);
+            background-color: #e6f7ed; /* Light green background */
+            border-radius: 4px;
         }
-        
-        .slide-text {
-            padding: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #60a5fa;
-        }
-        
-        .content {
+
+        .rubric-reference h3 {
+            color: var(--color-secondary);
+            margin-top: 0;
             font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
         }
-        
+
+        .rubric-reference p {
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        /* Navigation */
         .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ccc;
         }
-        
+
         .nav-button {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-button:hover {
-            background: #2563eb;
-        }
-        
-        .nav-button:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
             padding: 10px 20px;
+            background-color: var(--color-primary);
+            color: white;
+            text-decoration: none;
             border-radius: 5px;
-            font-size: 0.9em;
-            z-index: 50;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            background-color: #004494;
+        }
+
+        .nav-button.home {
+            background-color: #6c757d;
+        }
+
+        .nav-button.home:hover {
+            background-color: #5a6268;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 15px 20px;
+            background-color: var(--color-footer-bg);
+            color: var(--color-text);
+            text-align: center;
+            font-size: 0.85em;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .content-grid {
+                flex-direction: column;
+            }
+
+            .image-container {
+                max-width: 100%;
+                order: -1; /* Image on top for mobile */
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 25 of 27</div>
-            <div>
-                <a href="slide24.html" class="nav-btn">← Previous</a>
-                <a href="slide26.html" class="nav-btn">Next →</a>
-            </div>
-        </div>
-    </nav>
-    
+
     <div class="container">
-        <div class="slide-content">
-            <div class="slide-image">
-                <img src="images/slide25_conclusion.png" alt="Slide 25">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
+        <header>
+            <h1>Slide 25: Conclusion - Building AI-Ready Organizational Culture</h1>
+            <h2>Sustainable AI governance requires embedding ethical principles and compliance practices into organizational DNA</h2>
+        </header>
+
+        <div class="content-grid">
+            <div class="text-content">
+                <p>The transition to AI-driven operations represents not merely a technological change but a fundamental organizational transformation. Success requires moving beyond compliance as a checklist activity to embedding responsible AI principles into organizational culture, decision-making processes, and daily operations.</p>
+
+                <p>Organizations must recognize that AI governance is not a one-time project but an ongoing commitment requiring continuous learning, adaptation, and improvement as technologies evolve and regulations develop. The frameworks, tools, and practices discussed in this presentation provide the foundation, but their effectiveness depends on organizational commitment from leadership, engagement from employees across functions, and genuine prioritization of ethical considerations alongside business objectives.</p>
+
+                <p>Organizations that excel in AI governance will differentiate themselves through enhanced trust from customers and regulators, reduced risk of costly failures or penalties, improved decision quality from more reliable AI systems, and sustainable competitive advantage from responsible innovation. The path forward demands balancing innovation with responsibility, efficiency with fairness, and automation with human judgment—achieving this balance defines **AI-ready organizational culture**.</p>
+
+                <div class="rubric-reference">
+                    <h3>Rubric References and Detailed Explanation</h3>
+                    <p>This slide serves as the **Conclusion** and directly addresses the overarching requirement of the assignment: to establish a **Strategic Roadmap** for AI Governance.</p>
+                    <p>It synthesizes the key themes of the presentation, specifically addressing the following implied rubric criteria:</p>
+                    <ul>
+                        <li>**Strategic Alignment:** Emphasizes that AI governance is a "fundamental organizational transformation" and requires "organizational commitment from leadership," demonstrating alignment with high-level business strategy.</li>
+                        <li>**Sustainability and Continuous Improvement:** Highlights that governance is an "ongoing commitment requiring continuous learning, adaptation, and improvement," which is a key component of a mature, sustainable governance framework.</li>
+                        <li>**Value Proposition:** Clearly articulates the benefits of effective governance: "enhanced trust," "reduced risk," "improved decision quality," and "sustainable competitive advantage," thereby justifying the entire strategic roadmap.</li>
+                        <li>**Cultural Integration:** The central theme, "embedding responsible AI principles into organizational culture," directly addresses the need for a holistic, not just technical, solution.</li>
+                    </ul>
+                    <p>This slide provides the final, high-impact takeaway, ensuring the presentation concludes with a clear call to action and a summary of the strategic vision.</p>
+                </div>
             </div>
-            
-            <div class="slide-text">
-                <h1>Building AI-Ready Culture</h1>
-                <div class="content">Sustainable AI governance requires embedding ethical principles into organizational DNA through ethical foundation, innovation with responsibility, fairness as priority, continuous learning, and transparency.</div>
+
+            <div class="image-container">
+                <!-- Image for Slide 25: Building AI-Ready Culture -->
+                <img src="/home/ubuntu/slide_images/slide_25.png" alt="Conceptual image representing an AI-Ready Organizational Culture, possibly showing interconnected gears or a human-AI collaboration network." class="slide-image">
+                <p style="font-size: 0.8em; color: #6c757d; margin-top: 5px;">Visual: Conceptual image of an AI-Ready Organizational Culture.</p>
             </div>
         </div>
-        
+
         <div class="navigation">
-            <a href="slide24.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">25 / 27</span>
-            <a href="slide26.html" class="nav-button">Next →</a>
+            <a href="slide_24.html" class="nav-button">&larr; Previous (Slide 24)</a>
+            <a href="slide_01.html" class="nav-button home">Home (Slide 1)</a>
+            <a href="slide_26.html" class="nav-button">Next (Slide 26) &rarr;</a>
         </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <footer>
+        Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers | Slide 25 of 27
+    </footer>
+
 </body>
 </html>

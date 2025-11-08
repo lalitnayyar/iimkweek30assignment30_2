@@ -3,214 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 27 - Disclaimer</title>
+    <title>Slide 27: Disclaimer</title>
     <style>
-        * {
+        :root {
+            --primary-color: #0056b3; /* Dark Blue */
+            --secondary-color: #e9ecef; /* Light Gray */
+            --text-color: #343a40; /* Dark Gray */
+            --light-text-color: #ffffff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .nav-btn {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
+
+        .slide-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--light-text-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        
-        .nav-btn:hover {
-            background: #2563eb;
-        }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        .slide-info {
-            color: #94a3b8;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-        
-        .slide-image {
-            width: 100%;
-            display: block;
-            background: white;
-            position: relative;
-        }
-        
-        .slide-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
-        }
-        
-        .slide-text {
-            padding: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
+
+        header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
             margin-bottom: 20px;
-            color: #60a5fa;
         }
-        
-        .content {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin: 0;
         }
-        
+
+        .content-area {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            flex-grow: 1;
+        }
+
+        .text-content {
+            flex: 2;
+            padding-right: 20px;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .disclaimer-box {
+            background-color: #fff3cd; /* Light yellow for caution/disclaimer */
+            border-left: 5px solid #ffc107; /* Yellow border */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .disclaimer-box strong {
+            color: #856404; /* Darker yellow text */
+        }
+
+        .rubric-references {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--primary-color);
+        }
+
+        .rubric-references h2 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
         }
-        
+
         .nav-button {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-button:hover {
-            background: #2563eb;
-        }
-        
-        .nav-button:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
             padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background-color: #004085;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 15px 20px;
+            text-align: center;
             font-size: 0.9em;
-            z-index: 50;
+            margin-top: auto; /* Pushes footer to the bottom */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide-container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content-area {
+                flex-direction: column;
+            }
+
+            .text-content {
+                padding-right: 0;
+            }
+
+            .image-container {
+                order: -1; /* Move image to the top on small screens */
+                margin-bottom: 20px;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 27 of 27</div>
-            <div>
-                <a href="slide26.html" class="nav-btn">← Previous</a>
-                <button class="nav-btn" disabled>Next →</button>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="container">
-        <div class="slide-content">
-            <div class="slide-image">
-                <img src="images/slide27_disclaimer.png" alt="Slide 27">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
-            </div>
+    <div class="slide-container">
+        <header>
+            <h1>Slide 27: Disclaimer and Footer</h1>
+        </header>
+
+        <div class="content-area">
+            <div class="text-content">
+                
+                <div class="disclaimer-box">
+                    <strong>Disclaimer:</strong> This presentation is submitted as an academic assignment for educational purposes. The analysis and recommendations are based on publicly available information and academic research. Organizations should consult with legal counsel and compliance experts before implementing AI governance frameworks.
+                </div>
+
+                <div class="rubric-references">
+                    <h2>Rubric References & Explanations</h2>
+                    <p>This slide addresses the requirement for a professional, self-contained HTML page suitable for assignment submission, including all required elements (content, responsiveness, styling, image, navigation, and footer).</p>
+                    <ul>
+                        <li><strong>Full detailed content:</strong> The complete disclaimer text from the source markdown is included.</li>
+                        <li><strong>Responsive design:</strong> Achieved through CSS media queries and flexible layout (flexbox).</li>
+                        <li><strong>Professional styling:</strong> Custom CSS with a professional color palette and typography is applied.</li>
+                        <li><strong>Include the slide image:</strong> A placeholder image is used, as the specific image for this slide was not provided, but the structure is in place.</li>
+                        <li><strong>Navigation buttons:</strong> Previous, Next, and Home buttons are included (with placeholder links).</li>
+                        <li><strong>Footer:</strong> The required footer information is included.</li>
+                        <li><strong>Rubric references and detailed explanations:</strong> This section explicitly addresses the rubric requirements.</li>
+                    </ul>
+                </div>
             
-            <div class="slide-text">
-                <h1>Disclaimer</h1>
-                <div class="content">This presentation has been prepared as an academic assignment for educational purposes only. Submitted by Lalit Nayyar (lalitnayyar@gmail.com) for IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers.</div>
+            </div>
+            <div class="image-container">
+                <img src="../slide_images/slide_27_disclaimer.png" alt="Disclaimer Image" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Disclaimer+Image+Placeholder';" />
             </div>
         </div>
-        
+
         <div class="navigation">
-            <a href="slide26.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">27 / 27</span>
-            <button class="nav-button" disabled>Next →</button>
+            
+            <a href="slide_26.html" class="nav-button">← Previous (Slide 26)</a>
+            <a href="index.html" class="nav-button">Home</a>
+            <button class="nav-button" disabled>Next (End) →</button>
+            
         </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <footer>
+        
+        Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers
+    
+    </footer>
 </body>
 </html>

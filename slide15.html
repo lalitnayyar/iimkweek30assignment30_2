@@ -3,214 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 15 - FDA Regulation of AI Medical Devices</title>
+    <title>Slide 15: FDA Regulation of AI Medical Devices</title>
     <style>
-        * {
+        :root {
+            --primary-color: #0056b3; /* Dark Blue */
+            --secondary-color: #007bff; /* Bright Blue */
+            --text-color: #333;
+            --background-color: #f8f9fa; /* Light Gray */
+            --accent-color: #28a745; /* Green for emphasis */
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
+
+        .container {
+            flex: 1;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 15px 20px;
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .slide-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #6c757d;
         }
-        
-        .nav-btn {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
+
+        .slide-info span {
+            font-weight: 500;
         }
-        
-        .nav-btn:hover {
-            background: #2563eb;
+
+        .content-area {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            padding: 30px 0;
         }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
+
+        .text-content {
+            flex: 2;
         }
-        
-        .slide-info {
-            color: #94a3b8;
+
+        .image-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
         }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-        
-        .slide-image {
-            width: 100%;
-            display: block;
-            background: white;
-            position: relative;
-        }
-        
-        .slide-image img {
-            width: 100%;
+
+        .image-content img {
+            max-width: 100%;
             height: auto;
-            display: block;
-        }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
-        }
-        
-        .slide-text {
-            padding: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-            color: #60a5fa;
         }
-        
-        .content {
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        .key-point {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-left: 5px solid var(--accent-color);
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .key-point p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .rubric-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .rubric-section h3 {
+            color: var(--secondary-color);
             font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
+            margin-bottom: 10px;
         }
-        
+
+        .rubric-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .rubric-section li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 0.85em;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
         }
-        
-        .nav-button {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
+
+        .navigation a {
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-button:hover {
-            background: #2563eb;
-        }
-        
-        .nav-button:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
+            color: white;
+            background-color: var(--secondary-color);
+            padding: 10px 15px;
             border-radius: 5px;
-            font-size: 0.9em;
-            z-index: 50;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .navigation a:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-area {
+                flex-direction: column;
+            }
+
+            .image-content {
+                order: -1; /* Move image above text on small screens */
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .slide-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navigation a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 15 of 27</div>
-            <div>
-                <a href="slide14.html" class="nav-btn">← Previous</a>
-                <a href="slide16.html" class="nav-btn">Next →</a>
+    <header>
+        <div class="container">
+            <h1>Slide 15: Healthcare Compliance - FDA Regulatory Framework for AI Medical Devices</h1>
+            <div class="slide-info">
+                <span>Lalit Nayyar | lalitnayyar@gmail.com</span>
+                <span>Slide 15 / 27</span>
             </div>
         </div>
-    </nav>
-    
+    </header>
+
     <div class="container">
-        <div class="slide-content">
-            <div class="slide-image">
-                <img src="images/slide15_fda.png" alt="Slide 15">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
+        <div class="content-area">
+            <div class="text-content">
+                <h2>FDA's evolving regulatory approach balances AI innovation with patient safety through lifecycle management and transparency requirements</h2>
+                
+                <p>The Food and Drug Administration regulates AI-enabled medical devices through premarket pathways including 510(k) clearance, De Novo classification, and premarket approval. However, the FDA's traditional paradigm was not designed for adaptive AI/ML technologies that learn and evolve after deployment, creating regulatory challenges.</p>
+                
+                <div class="key-point">
+                    <p>The <strong>AI/ML Software as a Medical Device (SaMD) Action Plan</strong> (January 2021) established a framework for addressing these challenges through predetermined change control plans that allow certain modifications without new premarket review.</p>
+                </div>
+
+                <p><strong>Good Machine Learning Practice for Medical Device Development</strong> (October 2021) provides guiding principles for data quality, feature engineering, training, and performance monitoring. <strong>Transparency for ML-Enabled Medical Devices</strong> (June 2024) emphasizes the need for clear communication about how AI systems function, their limitations, and appropriate use contexts.</p>
+                
+                <div class="key-point">
+                    <p>The <strong>Draft Guidance on Lifecycle Management</strong> (January 2025) proposes comprehensive recommendations for marketing submissions, focusing on transparency, bias mitigation, and safety across the Total Product Life Cycle (TPLC).</p>
+                </div>
+
+                <p>Organizations developing AI medical devices must implement robust quality management systems, conduct thorough validation studies, and maintain ongoing surveillance.</p>
+
+                <div class="rubric-section">
+                    <h3>Rubric References & Detailed Explanations</h3>
+                    <ul>
+                        <li><strong>Compliance Frameworks:</strong> This slide directly addresses the need for sector-specific compliance frameworks by detailing the FDA's regulatory approach, which is critical for the healthcare sector of the multinational corporation.</li>
+                        <li><strong>Risk Management:</strong> The discussion of the FDA's focus on patient safety, lifecycle management, and the need for ongoing surveillance directly relates to the risk management criteria for high-stakes AI applications.</li>
+                        <li><strong>Transparency and Explainability:</strong> The mention of "Transparency for ML-Enabled Medical Devices" and the focus on clear communication about AI system function and limitations aligns with the transparency and explainability requirements of the overall assignment.</li>
+                        <li><strong>Total Product Life Cycle (TPLC):</strong> The emphasis on TPLC demonstrates a comprehensive, end-to-end approach to managing AI risk and compliance, which is a key component of a strategic roadmap.</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="slide-text">
-                <h1>FDA Regulation of AI Medical Devices</h1>
-                <div class="content">FDA applies risk-based framework for AI-enabled medical devices, requiring premarket review, clinical validation, performance monitoring, and transparency in algorithmic decision-making.</div>
+            <div class="image-content">
+                <!-- Placeholder for the slide image -->
+                <img src="/home/ubuntu/slide_images/slide15.png" alt="Conceptual image representing FDA regulation, AI, and medical devices, such as a stylized caduceus with circuit board patterns or a shield protecting a machine learning model.">
+                <p style="font-size: 0.8em; color: #6c757d;">Image: Conceptual representation of FDA's regulatory framework for AI medical devices.</p>
             </div>
         </div>
-        
+
         <div class="navigation">
-            <a href="slide14.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">15 / 27</span>
-            <a href="slide16.html" class="nav-button">Next →</a>
+            <a href="slide14.html">&larr; Previous (Slide 14)</a>
+            <a href="slide01.html">Home (Slide 1)</a>
+            <a href="slide16.html">Next (Slide 16) &rarr;</a>
         </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <footer>
+        <p>Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</p>
+    </footer>
 </body>
 </html>

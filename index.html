@@ -13,136 +13,146 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #ffffff;
             line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         
         header {
             text-align: center;
+            color: white;
             padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            margin-bottom: 40px;
         }
         
-        h1 {
+        header h1 {
             font-size: 3em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .subtitle {
-            font-size: 1.3em;
-            color: #a8d0ff;
-            margin-bottom: 30px;
+            font-size: 1.5em;
+            margin: 15px 0;
+            opacity: 0.95;
         }
         
         .student-info {
-            font-size: 1.1em;
-            color: #d0e8ff;
-            margin-top: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 700px;
+            backdrop-filter: blur(10px);
         }
         
-        .grid {
+        .student-info p {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .slides-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 40px;
+            margin: 40px 0;
         }
         
         .slide-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
         }
         
         .slide-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
         
         .slide-card a {
             text-decoration: none;
-            color: #ffffff;
+            color: inherit;
             display: block;
         }
         
         .slide-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
             font-size: 0.9em;
-            color: #a8d0ff;
-            margin-bottom: 10px;
         }
         
         .slide-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            margin-bottom: 10px;
+            padding: 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
         }
         
         .slide-preview {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
-            border-radius: 5px;
-            margin-top: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid #eee;
         }
         
         footer {
+            background: rgba(0,0,0,0.3);
+            color: white;
             text-align: center;
+            padding: 30px 20px;
             margin-top: 60px;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
         }
         
-        .watermark {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 0.9em;
+        footer p {
+            margin: 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .slides-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-    <script>
-        // Disable right-click
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        // Disable copy
-        document.addEventListener('copy', e => e.preventDefault());
-        // Disable text selection
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
     <div class="container">
         <header>
             <h1>AI Governance and Ethics</h1>
             <div class="subtitle">Strategic Roadmap for Multinational Corporations</div>
             <div class="subtitle">Establishing Responsible AI Practices Across Finance, Healthcare, and Logistics Sectors</div>
+            
             <div class="student-info">
-                <strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com<br>
-                Indian Institute of Management Kozhikode (IIMK)<br>
-                Professional Certificate in Data Science and Artificial Intelligence for Managers
+                <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com</p>
+                <p>Week 30: Required Assignment 30.2</p>
+                <p><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
+                <p>Indian Institute of Management, Kozhikode</p>
             </div>
         </header>
         
-        <div class="grid">
+        <div class="slides-grid">
             <div class="slide-card">
                 <a href="slide01.html">
                     <div class="slide-number">Slide 1</div>
@@ -178,7 +188,7 @@
             <div class="slide-card">
                 <a href="slide05.html">
                     <div class="slide-number">Slide 5</div>
-                    <div class="slide-title">Task 1 Overview - Ethical AI Practices</div>
+                    <div class="slide-title">Task 1 Overview - Ethical and Responsible AI Practices</div>
                     <img src="images/slide05_ethics.png" alt="Slide 5" class="slide-preview">
                 </a>
             </div>
@@ -362,8 +372,9 @@
         
         <footer>
             <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 10px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-            <p style="margin-top: 20px; font-size: 0.9em; color: #a8d0ff;">© 2025 All Rights Reserved</p>
+            <p><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
+            <p>Indian Institute of Management, Kozhikode</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">© 2025 All Rights Reserved</p>
         </footer>
     </div>
 </body>

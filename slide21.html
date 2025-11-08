@@ -3,214 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 21 - MLOps and Model Governance</title>
+    <title>Slide 21: MLOps and Model Governance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        * {
+        :root {
+            --primary-color: #0056b3; /* Dark Blue */
+            --secondary-color: #007bff; /* Bright Blue */
+            --text-color: #333;
+            --background-color: #f8f9fa; /* Light Gray */
+            --border-color: #dee2e6;
+            --footer-bg: #e9ecef;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid #1e40af;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
-        .nav-btn {
-            background: #1e40af;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background: #2563eb;
-        }
-        
-        .nav-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        .slide-info {
-            color: #94a3b8;
-        }
-        
+
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
+            flex-grow: 1;
         }
-        
-        .slide-content {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-        
-        .slide-image {
-            width: 100%;
-            display: block;
-            background: white;
-            position: relative;
-        }
-        
-        .slide-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-size: 0.85em;
-        }
-        
-        .slide-text {
-            padding: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #60a5fa;
-        }
-        
-        .content {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #cbd5e1;
-        }
-        
-        .navigation {
+
+        /* Header and Navigation */
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 10px;
+            flex-wrap: wrap;
         }
-        
-        .nav-button {
-            background: #1e40af;
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .nav-buttons a {
             color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .nav-button:hover {
-            background: #2563eb;
-        }
-        
-        .nav-button:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: #1e293b;
-            border-radius: 10px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        
-        .watermark-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
+            padding: 8px 15px;
+            margin-left: 10px;
             border-radius: 5px;
-            font-size: 0.9em;
-            z-index: 50;
+            transition: background-color 0.3s;
+            border: 1px solid white;
+        }
+
+        .nav-buttons a:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        /* Main Content */
+        .slide-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .slide-content h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-weight: 700;
+            font-size: 2em;
+        }
+
+        .slide-content h3 {
+            color: var(--text-color);
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .content-section {
+            margin-top: 25px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content-section strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Image Styling */
+        .slide-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .slide-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--text-color);
+            padding: 15px 20px;
+            font-size: 0.85em;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header h1 {
+                margin-bottom: 10px;
+            }
+
+            .nav-buttons a {
+                margin-left: 0;
+                margin-right: 10px;
+                margin-bottom: 5px;
+                display: inline-block;
+            }
+
+            .slide-content {
+                padding: 20px;
+            }
+
+            .slide-content h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('copy', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="watermark-fixed">Lalit Nayyar | lalitnayyar@gmail.com</div>
-    
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">🏠 Home</a>
-            <div class="slide-info">Slide 21 of 27</div>
-            <div>
-                <a href="slide20.html" class="nav-btn">← Previous</a>
-                <a href="slide22.html" class="nav-btn">Next →</a>
-            </div>
+
+    <div class="header">
+        <h1>Slide 21 of 27: MLOps and Model Governance</h1>
+        <div class="nav-buttons">
+            <a href="slide20.html">Previous</a>
+            <a href="index.html">Home</a>
+            <a href="slide22.html">Next</a>
         </div>
-    </nav>
-    
+    </div>
+
     <div class="container">
         <div class="slide-content">
+            <h2>Continuous Monitoring - MLOps and Model Governance</h2>
+            <h3>MLOps governance frameworks integrate automated processes for tracking, validation, and documentation across the AI lifecycle</h3>
+
             <div class="slide-image">
-                <img src="images/slide21_mlops.png" alt="Slide 21">
-                <div class="watermark">Lalit Nayyar | lalitnayyar@gmail.com</div>
+                <!-- Placeholder for the slide image. Assuming the image is named slide21.png or similar and is in the same directory for a self-contained page. -->
+                <img src="../slide_images/slide21.png" alt="Conceptual image representing MLOps pipeline with icons for tracking, validation, and deployment." onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400?text=Image+for+Slide+21+MLOps+and+Model+Governance';" />
             </div>
-            
-            <div class="slide-text">
-                <h1>MLOps and Model Governance</h1>
-                <div class="content">MLOps governance integrates automated tracking, validation frameworks, version control, reproducible pipelines, and continuous deployment for AI lifecycle management.</div>
+
+            <div class="content-section">
+                <p>Machine Learning Operations (MLOps) governance provides the operational foundation for continuous AI monitoring and compliance. **Automated tracking and monitoring** captures comprehensive metadata about model development, training data, feature engineering, hyperparameters, and performance metrics, creating complete lineage documentation. **Validation processes** ensure models meet quality, performance, and fairness standards before deployment, with automated testing that checks for regression, bias, and compliance violations.</p>
+
+                <p>**Versioning systems** maintain complete histories of all ML artifacts including datasets, code, models, and configurations, enabling reproducibility and rollback when issues emerge. **Reproducible pipelines** automate data processing, model training, and deployment workflows, reducing manual errors and ensuring consistency. **Model governance frameworks** establish policies for model approval, deployment authorization, ongoing monitoring requirements, and retirement criteria.</p>
+
+                <p>**Continuous integration/continuous deployment (CI/CD)** for ML enables rapid, safe updates while maintaining quality and compliance standards. **Collaboration tools** facilitate communication between data scientists, engineers, compliance officers, and business stakeholders, ensuring alignment on objectives and requirements. Effective MLOps governance bridges the gap between AI development and operational reliability.</p>
+            </div>
+
+            <div class="content-section">
+                <h4>Rubric References and Detailed Explanation</h4>
+                <p>This slide directly addresses the requirement for **Continuous Monitoring and Evaluation of Integrated AI Systems** by detailing the technical and process-oriented framework—MLOps—that makes continuous monitoring possible. It explains how MLOps ensures **audit readiness** and **sustained compliance** by automating key governance functions like tracking, validation, and versioning. The detailed explanation covers the core components of MLOps governance, including: Automated Tracking, Validation Processes, Versioning Systems, Reproducible Pipelines, Model Governance Frameworks, CI/CD for ML, and Collaboration Tools. This level of detail provides the necessary technical depth to satisfy the assignment's requirement for comprehensive explanation of the monitoring infrastructure.</p>
             </div>
         </div>
-        
-        <div class="navigation">
-            <a href="slide20.html" class="nav-button">← Previous</a>
-            <span style="color: #94a3b8;">21 / 27</span>
-            <a href="slide22.html" class="nav-button">Next →</a>
-        </div>
-        
-        <footer>
-            <p><strong>Lalit Nayyar</strong> | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2</p>
-            <p style="margin-top: 8px;"><strong>IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers</strong></p>
-        </footer>
     </div>
+
+    <div class="footer">
+        Lalit Nayyar | lalitnayyar@gmail.com | Week 30: Required Assignment 30.2 | IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers
+    </div>
+
 </body>
 </html>
